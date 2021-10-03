@@ -32,27 +32,35 @@ int main(int argc, const char * argv[]) {
         char ch = string_array[i];
         if((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
         {
+            //update the count of letters
             letter_count++;
         }
         else if(ch >= '0' && ch <= '9')
         {
+            //update the count of digits
             digit_count++;
         }
         else
         {
+            //update the count of other characters
             other_count++;
         }
     }
+    //check for rules
     if (other_count > 0) {
+        //if it contains special characters
         printf("You can only have letters and digits.");
     }
     else if(letter_count < 2) {
+        //if it contains fewer than 2 letters
         printf("You must have at least 2 letters.");
     }
     else if(digit_count < 2) {
+        //if it contains fewer than 2 digits
         printf("You must have at least 2 digits.");
     }
     else {
+        //everything okay
         printf("You have entered a valid password.");
     }
 
